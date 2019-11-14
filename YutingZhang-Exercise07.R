@@ -17,7 +17,7 @@ OddRows(iris)
 
 #Create a function named NumberOfSpecies:
 NumberOfSpecies <- function(data,taxa){
-  subsetOfSpecies <- data[data$Species == taxa,]
+  subsetOfSpecies <- data[data$Species == taxa,]   #create a subset for each species
   Number <- nrow(subsetOfSpecies)
   return(Number)
 }
@@ -40,7 +40,7 @@ FlowersOfSepalWidth(iris,3.5)
 #Create a function named ChosenSpecies:
 ChosenSpecies <- function(data, taxa){
   subsetOfSpecies <- data[data$Species == taxa,]
-  write.csv(subsetOfSpecies, file = paste(taxa,".csv",sep="")) 
+  write.csv(subsetOfSpecies, file = paste(taxa,".csv",sep=""), row.names = FALSE) 
 }
 
 ChosenSpecies(iris, "setosa")
